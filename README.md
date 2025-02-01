@@ -5,38 +5,44 @@ This project trains a YOLOv5 model to detect **rock climbing holds and volumes**
 
 ## Directory Structure
 ```
-project_root/
+Identifying-and-Classifying-Climbing-Holds-and-Volumes/
 │── yolov5/                          # YOLOv5 model directory
 │   ├── train.py                     # Main training script
 │   ├── requirements.txt             # Dependencies for YOLOv5
 │   ├── runs/                         # Directory for training results and saved weights
 │   ├── scripts/                      # Custom scripts for data processing and training
-│   │   ├── data_preparation.py       # Converts dataset to YOLO format
-│   │   ├── augmentation.py           # Applies data augmentation
-│   │   ├── train_model.py            # Trains YOLO model
+│   │   ├── data_extract.ipynb        # Extracts and preprocesses dataset
+│   │   ├── machine_learning.ipynb    # Machine learning model training
 │   │   ├── inference.py              # Runs inference on test images
 │   │   ├── nms_postprocessing.py     # Applies Non-Maximum Suppression
-│   ├── runs/hold_volume_detection8/weights/best.pt  # Trained model weights
+│
+│── yolov5_backup/                    # Backup of YOLOv5 models and training
 │
 │── data/                             # Raw dataset
-│   ├── train/                        # Original training images
-│   ├── valid/                        # Original validation images
-│   ├── test_image/                    # Test images for inference
-│   ├── test_output/                   # YOLO model predictions output
-│
-│── yolo_data/                        # YOLO-formatted dataset
-│   ├── train/
-│   │   ├── images/                    # Training images formatted for YOLO
-│   │   ├── labels/                    # Corresponding labels in YOLO format
-│   ├── valid/
-│   │   ├── images/                    # Validation images formatted for YOLO
-│   │   ├── labels/                    # Corresponding labels in YOLO format
+│   ├── yolo_data/                    # YOLO-formatted dataset
+│   │   ├── train/
+│   │   │   ├── images/               # Training images formatted for YOLO
+│   │   │   ├── labels/               # Corresponding labels in YOLO format
+│   │   ├── valid/
+│   │   │   ├── images/               # Validation images formatted for YOLO
+│   │   │   ├── labels/               # Corresponding labels in YOLO format
 │
 │── augmented_data/                    # Augmented dataset for class balancing
-│   ├── images/                         # Augmented images
-│   ├── labels/                         # Corresponding labels for augmented images
+│   ├── augmented_images/              # Augmented images
+│   ├── augmented_labels/              # Corresponding labels for augmented images
 │
-│── README.md                          # Project documentation
+│── notebooks/                         # Jupyter notebooks for data processing and training
+│   ├── data_extract.ipynb             # Extracts data for training
+│   ├── main.ipynb                     # Main training pipeline
+│
+│── annotations/                        # COCO-format annotation files
+│   ├── test_coco_annotations.csv       # Test set annotations
+│   ├── train_coco_annotations.csv      # Training set annotations
+│   ├── valid_coco_annotations.csv      # Validation set annotations
+│
+│── .gitignore                          # Ignore unnecessary files (e.g., model weights, cache)
+│── README.md                           # Project documentation
+
 
 ```
 
