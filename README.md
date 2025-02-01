@@ -6,7 +6,7 @@ This project trains a YOLOv5 model to detect **rock climbing holds and volumes**
 ## Directory Structure
 ```
 Identifying-and-Classifying-Climbing-Holds-and-Volumes/
-│── yolov5/                          # A submodule linking to the YOLOv5 repository for object detection.
+│── yolov5/                          # A submodule linking to the [YOLOv5 repository for object detection](https://github.com/qianweiz1998/si670_final_project.git).
 │
 │── data/                             # Raw dataset
 │   ├── yolo_data/                    # YOLO-formatted dataset
@@ -17,9 +17,8 @@ Identifying-and-Classifying-Climbing-Holds-and-Volumes/
 │   │   │   ├── images/               # Validation images formatted for YOLO
 │   │   │   ├── labels/               # Corresponding labels in YOLO format
 │
-│── augmented_data/                    # Augmented dataset for class balancing
-│   ├── augmented_images/              # Augmented images
-│   ├── augmented_labels/              # Corresponding labels for augmented images
+│── augmented_images/                 # Augmented dataset for class balancing
+│── augmented_labels/                 # Corresponding labels for augmented images
 │
 │── notebooks/                         # Jupyter notebooks for data processing and training
 │   ├── data_extract.ipynb             # Extracts data for training
@@ -30,9 +29,6 @@ Identifying-and-Classifying-Climbing-Holds-and-Volumes/
 │   ├── train_coco_annotations.csv      # Training set annotations
 │   ├── valid_coco_annotations.csv      # Validation set annotations
 │
-│── .gitignore                          # Ignore unnecessary files (e.g., model weights, cache)
-│── README.md                           # Project documentation
-
 
 ```
 
@@ -50,9 +46,9 @@ python yolov5/train.py --img 416 --batch 8 --epochs 30 --data yolo_data/data.yam
 ```
 
 ## Results
-![Result 1](result_1.JPG)
-![Result 2](result_2.JPG)
-![Result 3](result_3.png)
+![Result 1](README_images/result_1.JPG)
+![Result 2](README_images/result_2.JPG)
+![Result 3](README_images/result_3.png)
 
 ## Acknowledgments
 - YOLOv5 by Ultralytics: https://github.com/ultralytics/yolov5
