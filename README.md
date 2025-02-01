@@ -6,17 +6,7 @@ This project trains a YOLOv5 model to detect **rock climbing holds and volumes**
 ## Directory Structure
 ```
 Identifying-and-Classifying-Climbing-Holds-and-Volumes/
-│── yolov5/                          # YOLOv5 model directory
-│   ├── train.py                     # Main training script
-│   ├── requirements.txt             # Dependencies for YOLOv5
-│   ├── runs/                         # Directory for training results and saved weights
-│   ├── scripts/                      # Custom scripts for data processing and training
-│   │   ├── data_extract.ipynb        # Extracts and preprocesses dataset
-│   │   ├── machine_learning.ipynb    # Machine learning model training
-│   │   ├── inference.py              # Runs inference on test images
-│   │   ├── nms_postprocessing.py     # Applies Non-Maximum Suppression
-│
-│── yolov5_backup/                    # Backup of YOLOv5 models and training
+│── yolov5/                          # A submodule linking to the YOLOv5 repository for object detection.
 │
 │── data/                             # Raw dataset
 │   ├── yolo_data/                    # YOLO-formatted dataset
@@ -45,3 +35,27 @@ Identifying-and-Classifying-Climbing-Holds-and-Volumes/
 
 
 ```
+
+## Dataset Preparation
+### 1. Convert COCO Annotations to YOLO Format
+Run the script to process COCO-style annotations into YOLO format:
+
+### 2. Apply Data Augmentation
+Due to data imbalance, additional transformations such as oversampling and targeted data augmentation are applied to volume data to improve model performance.
+   - `augment_volume_data.png`
+
+## Training YOLOv5
+To train the YOLO model with the prepared dataset:
+```sh
+python yolov5/train.py --img 416 --batch 8 --epochs 30 --data yolo_data/data.yaml --weights yolov5s.pt --project runs --name hold_volume_detection --workers 4
+```
+
+## Results
+   - `result_1.JPG`
+   - `result_2.JPG`
+   - `result_3.png`
+
+## Acknowledgments
+- YOLOv5 by Ultralytics: https://github.com/ultralytics/yolov5
+- Image Augmentation: Albumentations & Imgaug libraries
+
