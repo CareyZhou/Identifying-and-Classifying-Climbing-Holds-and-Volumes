@@ -42,7 +42,6 @@ Run the script to process COCO-style annotations into YOLO format:
 
 ### 2. Apply Data Augmentation
 Due to data imbalance, additional transformations such as oversampling and targeted data augmentation are applied to volume data to improve model performance.
-![augment_volume_data](augment_volume_data.png)
 
 ## Training YOLOv5
 To train the YOLO model with the prepared dataset:
