@@ -7,7 +7,9 @@ This project trains a YOLOv5 model to detect **rock climbing holds and volumes**
 ```
 Identifying-and-Classifying-Climbing-Holds-and-Volumes/
 │── yolov5/                          # A submodule linking to the YOLOv5 repository for object detection
+
 [YOLOv5 Repository](https://github.com/qianweiz1998/si670_final_project.git)
+
 │
 │── data/                             # Raw dataset
 │   ├── yolo_data/                    # YOLO-formatted dataset
